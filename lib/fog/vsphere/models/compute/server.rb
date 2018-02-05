@@ -97,13 +97,13 @@ module Fog
 
         def start(options = {})
           requires :instance_uuid
-          service.vm_power_on('instance_uuid' => instance_uuid) unless ready?
+          ready? || service.vm_power_on('instance_uuid' => instance_uuid)
         end
 
         def stop(options = {})
           options = { :force => !tools_installed? || !tools_running? }.merge(options)
           requires :instance_uuid
-          service.vm_power_off('instance_uuid' => instance_uuid, 'force' => options[:force]) unless power_state == 'poweredOff'
+          power_state == 'poweredOff' || service.vm_power_off('instance_uuid' => instance_uuid, 'force' => options[:force])
         end
 
         def suspend(options = {})
