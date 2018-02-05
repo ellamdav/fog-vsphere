@@ -161,6 +161,7 @@ module Fog
           :hardware_version => 'config.version',
           :cpuHotAddEnabled => 'config.cpuHotAddEnabled',
           :memoryHotAddEnabled => 'config.memoryHotAddEnabled',
+          :nestedHVEnabled => 'config.nestedHVEnabled',
           :firmware => 'config.firmware',
           :annotation => 'config.annotation',
         }

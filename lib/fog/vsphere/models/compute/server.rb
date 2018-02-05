@@ -49,6 +49,7 @@ module Fog
         attribute :scsi_controllers, :type => :array
         attribute :cpuHotAddEnabled
         attribute :memoryHotAddEnabled
+        attribute :nestedHVEnabled
         attribute :firmware
         attribute :annotation
 

@@ -173,6 +173,7 @@ module Fog
           virtual_machine_config_spec.memoryMB = options['memoryMB'] if ( options.key?('memoryMB') )
           virtual_machine_config_spec.cpuHotAddEnabled = options['cpuHotAddEnabled'] if ( options.key?('cpuHotAddEnabled') )
           virtual_machine_config_spec.memoryHotAddEnabled = options['memoryHotAddEnabled'] if ( options.key?('memoryHotAddEnabled') )
+          virtual_machine_config_spec.nestedHVEnabled = options['nestedHVEnabled'] if ( options.key?('nestedHVEnabled') )
           virtual_machine_config_spec.firmware = options['firmware'] if ( options.key?('firmware') )
           virtual_machine_config_spec.extraConfig = extra_config(extra_config: options['extraConfig']) if ( options.key?('extraConfig') )
           if @vsphere_rev.to_f >= 5 && options.key?('boot_order')

@@ -19,6 +19,7 @@ module Fog
           }
           vm_cfg[:cpuHotAddEnabled] = attributes[:cpuHotAddEnabled] if attributes.key?(:cpuHotAddEnabled)
           vm_cfg[:memoryHotAddEnabled] = attributes[:memoryHotAddEnabled] if attributes.key?(:memoryHotAddEnabled)
+          vm_cfg[:nestedHVEnabled] = attributes[:nestedHVEnabled] if attributes.key?(:nestedHVEnabled)
           vm_cfg[:firmware] = attributes[:firmware] if attributes.key?(:firmware)
           vm_cfg[:bootOptions] = boot_options(attributes, vm_cfg) if attributes.key?(:boot_order) || attributes.key?(:boot_retry)
           resource_pool = if attributes[:resource_pool] && attributes[:resource_pool] != 'Resources'
