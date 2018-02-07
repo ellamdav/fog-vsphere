@@ -630,7 +630,8 @@ module Fog
               relocation_spec[:datastore] = datastore_obj
             end
           end
-          relocation_spec[:disk] = relocate_template_volumes_specs(vm_mob_ref, options['volumes'], options['datacenter'])
+          disk_relocation_specs = relocate_template_volumes_specs(vm_mob_ref, options['volumes'], options['datacenter'])
+          relocation_spec[:disk] = disk_relocation_specs unless disk_relocation_specs.empty?
           # And the clone specification
           clone_spec = RbVmomi::VIM.VirtualMachineCloneSpec(:location => relocation_spec,
                                                             :config => virtual_machine_config_spec,
